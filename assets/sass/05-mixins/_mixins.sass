@@ -1,0 +1,27 @@
+@use '../02-base/_variables'
+    
+    
+@mixin mobile
+    @media screen and (min-width: 1px) and (max-width:480px)
+        @content
+
+
+@mixin tablet
+    @media screen and (min-width:481px) and (max-width:768px)
+        @content
+
+@mixin center-container
+    max-width: variables.$width-container
+    margin: 0 auto
+
+@mixin display
+    display: flex
+    justify-content: center
+    align-items: center
+        
+
+@mixin imagem ($url)       
+    background-image: url($url)
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover

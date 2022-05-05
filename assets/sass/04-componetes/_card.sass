@@ -1,0 +1,89 @@
+@use '../02-base/_variables'
+@use '../05-mixins/_mixins'
+
+
+
+.main-container
+    @include mixins.center-container
+    .card-container
+        @include mixins.display
+        @include mixins.mobile
+            flex-direction: column
+        @include mixins.tablet
+            flex-wrap: wrap
+    .card
+        height: 650px
+        margin-left: 1rem
+        width: 400px
+        padding: 1rem
+        margin-top: 2rem
+        transition: .5s
+        @include mixins.tablet
+            margin: 10px
+            width: 40%
+            padding: 10px
+            margin-bottom: 2rem
+        @include mixins.mobile
+            margin-left: 0
+            margin-bottom: 2rem
+            
+            width: 100%
+        
+
+
+        &:hover
+            border-color: transparent
+            box-shadow: 0 0 10px variables.$color-dark
+            transform: translateY(-20px)
+            i
+                color: variables.$color-cinza
+                font-size: 1.5rem
+        
+        
+        .photo1
+            transition: 1s
+            @include mixins.imagem ('../img/1.png')
+            height: variables.$photos-card
+            background-size: cover
+            background-position-y: 0
+            
+        .photo2
+            @include mixins.imagem ('../img/2.jpg')
+            height: variables.$photos-card
+            background-size: cover
+            background-position-y: 0
+            
+        .photo3
+            @include mixins.imagem ('../img/3.jpeg')
+            height: variables.$photos-card
+            background-size: cover
+            background-position-y: 0
+            transition: 1s ease
+        &-content
+            display: grid
+            gap:10px
+            padding-bottom: 8px
+            .card-name
+                text-align: left
+                width: 100%
+                font-size: .8rem
+                padding: .5rem
+            .card-title
+                font-size: 1.5rem
+                font-family: 'Lora', serif
+            .card-description
+                line-height: 1.3rem
+        hr
+            margin: 0 auto
+            border: 1px dashed variables.$color-cinza
+            width: 50%
+            margin-bottom: 1rem
+            
+        i
+            padding-right: .8rem
+            font-size: .8rem
+            transition: 1s
+            
+    
+
+    

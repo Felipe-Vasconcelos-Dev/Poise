@@ -1,0 +1,23 @@
+@use '../02-base/_variables'
+@use '../05-mixins/_mixins'
+.btn
+    width: 30%
+    background-color: variables.$color-dark
+    color: variables.$color-light
+    text-align: center
+    height: 50px
+    @include mixins.display
+    transition: .5s
+    border: 1px solid transparent
+    align-items: left
+    @include mixins.mobile
+        width: 100%
+    @include mixins.tablet
+        width: 100%
+    
+    &:hover
+        color: variables.$color-dark    
+        background-color: variables.$color-light
+        border: 1px solid variables.$color-dark
+    
+    
